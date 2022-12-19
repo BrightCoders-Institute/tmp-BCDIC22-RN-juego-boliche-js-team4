@@ -1,4 +1,5 @@
 const BowlingGame = require('./src/classes/bowlingGame.js')
 
-game = new BowlingGame()
+const game = new BowlingGame()
 
+game.startGame()
