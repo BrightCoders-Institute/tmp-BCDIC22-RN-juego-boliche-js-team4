@@ -29,7 +29,7 @@ it('Should return the correct score when hits a spare',() =>{
     if ((game.board[1].firstThrow + game.board[1].secondThrow) < 10) {
         test1 = game.board[1].firstThrow + game.board[1].secondThrow
     } else {
-        if ((game.board[1].firstThrow + game.board[1].secondThrow) == 10) {
+        if ((game.board[1].firstThrow + game.board[1].secondThrow) === 10) {
             test1 = game.board[1].firstThrow + game.board[1].secondThrow + game.board[2].firstThrow
         }
     }
