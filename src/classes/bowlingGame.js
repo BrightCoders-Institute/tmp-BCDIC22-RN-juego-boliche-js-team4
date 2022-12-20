@@ -87,7 +87,7 @@ class BowlingGame {
         board.firstThrow = firstThrow
         this.pins -= firstThrow
 
-        if(firstThrow == 10){
+        if(firstThrow === 10){
             this.strike = true
             this.pins = 10
         }
@@ -97,7 +97,7 @@ class BowlingGame {
         let secondThrow = Math.floor(Math.random() * this.pins) + 1
         board.secondThrow = secondThrow
 
-        if(secondThrow == this.pins){
+        if(secondThrow === this.pins){
             this.spare = true
         }
         this.pins = 10
@@ -112,7 +112,7 @@ class BowlingGame {
         for(let i = 0; i < this.rounds; i++){
             this.firstThrow(this.board[i])
 
-            if(this.strike == true){
+            if(this.strike === true){
                 this.board[i].roundScore = this.board[i].firstThrow + this.board[i].secondThrow
                 this.roundScore += this.board[i].roundScore
                 this.strike = false
@@ -131,7 +131,7 @@ class BowlingGame {
                 if(this.board[i].firstThrow === 10){
                     this.board[i].roundScore += this.board[i+1].firstThrow
 
-                    if(this.board[i] == 8 && this.board[9].firstThrow == 10 && this.board[8].firstThrow == 10){
+                    if(this.board[i] === 8 && this.board[9].firstThrow === 10 && this.board[8].firstThrow === 10){
                         this.board[i].roundScore += this.board[i+1].firstThrow + this.board[i+1].secondThrow
 
                         continue
@@ -154,11 +154,11 @@ class BowlingGame {
                     this.board[i].secondThrow = Math.floor(Math.random() * this.pins) + 1
                     this.board[i].thirdThrow = Math.floor( Math.random() * this.pins) + 1
                     this.board[i].roundScore += this.board[i].secondThrow + this.board[i].thirdThrow
-                } else if ((this.board[9].firstThrow + this.board[9].secondThrow) == 10){
+                } else if ((this.board[9].firstThrow + this.board[9].secondThrow) === 10){
                     this.board[9].thirdThrow = Math.floor( Math.random() * this.pins) + 1
                     this.board[9].roundScore +=  this.board[i].thirdThrow
                 }
-                else if((this.board[i].firstThrow + this.board[i].secondThrow) == 10){
+                else if((this.board[i].firstThrow + this.board[i].secondThrow) === 10){
                     continue
                 }
             }
